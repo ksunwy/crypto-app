@@ -2,26 +2,149 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  grid-template-columns: repeat(auto-fill, 1, 1fr);
+}
+
+.newPhone {
+  width: 337px;
+  height: 689px;
+  background-image: url('/phone.jpg');
+  object-fit: cover;
+}
+
+.newIcons {
+  width: 350px;
+  height: 96px;
+  background-image: url('/icons.svg');
+  object-fit: cover;
+}
+
+.apiBlock {
+  width: 1200px;
+  height: 550px;
+  background-image: url('/apiblock.jpg');
+  object-fit: cover;
+  border-radius: 40px;
+}
+
+.numberBtn {
+  background: linear-gradient(219.58deg, #010417 10.26%, #2B333F 84.25%), linear-gradient(46.15deg, #000000 15.89%, #434343 171.16%);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.02), 0px 0px 8px rgba(182, 186, 191, 0.04);
+}
+
+.newBtn {
+  background: linear-gradient(239.82deg, rgba(41, 126, 226, 0.12) 3.57%, rgba(24, 97, 182, 0.12) 86.24%);
+}
+
+.arrows {
+  width: 43px;
+  height: 25px;
+  background-image: url('/button.svg');
+  object-fit: cover;
+}
+
+.newHalfPhone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 461px;
+  height: 350px;
+  background-image: url('/halfPhone.jpg');
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+  object-fit: cover;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  .newPhone {
+    background-image: url('/darkphone.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .newIcons {
+    background-image: url('/darkicons.png');
+  }
+
+  .numberBtn {
+    background: #fff;
+  }
+
+  .newBtn {
+    background: linear-gradient(233.23deg, #8BB2DB -20.48%, #0660C9 97.38%);
+  }
+
+  .arrows {
+    background-image: url('/darkButton.svg');
+  }
+
+  .newHalfPhone {
+    background-image: url('/darkHalfPhone.jpg');
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@media screen and (max-width: 1200px) {
+  .newPhone {
+    max-width: 330px;
+    height: 689px;
+    margin-left: 13px;
+  }
+
+  .newIcons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 24px;
+  }
+
+  .apiBlock {
+    width: 335px;
+    height: 514px;
+    background-image: url('/apiblock2.jpg');
+  }
+
+  .newBtn {
+    width: 221px;
+  }
+
+  .arrows {
+    width: 37px;
+    height: 20px;
+    background-image: url('/smallButton.svg');
+  }
+
+  .newHalfPhone {
+    width: 247px;
+    height: 198px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    background-image: url('/smallHalfPhone.jpg');
+  }
+
+}
+
+@media (prefers-color-scheme: dark) and (max-width: 1200px) {
+  .arrows {
+    width: 37px;
+    height: 20px;
+    background-image: url('/darkSmallButton.svg');
+  }
+
+  .newHalfPhone {
+    width: 247px;
+    height: 198px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    background-image: url('/darkSmallHalfPhone.jpg');
+  }
 }
